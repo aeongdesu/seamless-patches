@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pico_motion_tracker">PICO Motion Tracker</string>
+    <string name="pico_motion_tracker_description">Injects an OpenXR implicit API layer that streams PICO full-body tracking (XR_BD_body_tracking) and physical object tracker poses (XR_BD_motion_tracking) to the companion SteamVR OpenVR driver over UDP</string>
+
+    <string name="opt_host_title">PC driver IP address</string>
+    <string name="opt_host_description">IPv4 address of the PC running SteamVR and the Seamless PICO Motion Tracker driver. Leave blank to auto-discover on the local network</string>
+
+    <string name="opt_port_title">PC driver UDP port</string>
+    <string name="opt_port_description">UDP port the SteamVR OpenVR driver listens on (default 39575).</string>
+
+    <string name="opt_tracker_preset_title">Body tracker preset</string>
+    <string name="opt_tracker_preset_description">Selects active SteamVR tracker roles in full-body mode: 3pt (Waist, Feet), 6pt (+ Chest, Knees), 8pt (+ Elbows), 10pt (+ Shoulders), or all (+ Hips, Wrists)</string>
+
+    <string name="opt_tracking_mode_title">Tracking mode</string>
+    <string name="opt_tracking_mode_description">auto follows the headset PICO Motion Tracker setting (Body or Object tracking); body forces full-body joints; object forces raw physical tracker poses</string>
+</resources>

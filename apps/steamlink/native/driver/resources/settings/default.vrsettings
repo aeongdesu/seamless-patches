@@ -1,0 +1,10 @@
+{
+    "driver_seamless_pico_mt": {
+        "enable": true,
+        "port": 39575,
+        "alignmentMode": "auto",
+        "poseTimeOffset": 0.0,
+        "timeoutSeconds": 2.0,
+        "roleMaskOverride": 0
+    }
+}

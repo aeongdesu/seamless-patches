@@ -1,0 +1,61 @@
+name: Steam Link OpenVR Driver
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'apps/steamlink/native/driver/**'
+      - 'apps/steamlink/native/protocol/**'
+      - '.github/workflows/steamlink-openvr-driver.yml'
+  pull_request:
+    paths:
+      - 'apps/steamlink/native/driver/**'
+      - 'apps/steamlink/native/protocol/**'
+      - '.github/workflows/steamlink-openvr-driver.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Configure and build OpenVR driver
+        shell: pwsh
+        run: |
+          Remove-Item -Force -ErrorAction SilentlyContinue "apps/steamlink/native/driver/bin/win64/driver_seamless_pico_mt.dll"
+          cmake -S apps/steamlink/native/driver -B build/driver -A x64
+          cmake --build build/driver --config Release
+
+      - name: Package driver artifact
+        shell: pwsh
+        run: |
+          $stage = "dist/seamless_pico_mt"
+          New-Item -ItemType Directory -Force -Path "$stage/bin/win64", "$stage/resources/settings" | Out-Null
+          Copy-Item "apps/steamlink/native/driver/bin/win64/driver_seamless_pico_mt.dll" "$stage/bin/win64/"
+          Copy-Item "apps/steamlink/native/driver/driver.vrdrivermanifest" "$stage/"
+          Copy-Item "apps/steamlink/native/driver/resources/settings/default.vrsettings" "$stage/resources/settings/"
+          Copy-Item "apps/steamlink/native/driver/install-windows.ps1" "$stage/"
+          Compress-Archive -Path "$stage/*" -DestinationPath "dist/seamless-pico-mt-driver-win64.zip" -Force
+
+      - name: Generate build provenance attestation
+        if: github.event_name != 'pull_request'
+        uses: actions/attest@v4
+        with:
+          subject-path: |
+            dist/seamless-pico-mt-driver-win64.zip
+            dist/seamless_pico_mt/bin/win64/driver_seamless_pico_mt.dll
+
+      - name: Upload driver artifact
+        uses: actions/upload-artifact@v7
+        with:
+          path: dist/seamless-pico-mt-driver-win64.zip
+          archive: false

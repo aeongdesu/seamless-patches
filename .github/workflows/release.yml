@@ -36,6 +36,9 @@ jobs:
           chmod +x engine/reseam
           echo "${{ secrets.BUNDLE_SIGNING_KEY_B64 }}" | base64 -d > bundle-signing.key
 
+      - name: Build steamlink native resources
+        run: ./apps/steamlink/native/layer/build.sh
+
       - name: Build the bundle
         run: ./gradlew bundle -PreleaseTag=$GITHUB_REF_NAME --no-daemon
 

@@ -2,6 +2,25 @@ build/
 .gradle/
 .kotlin/
 out/
+dist/
+
+# this just fetched from reseam docs yep
+.agents/
+AGENTS.md
+
+apps/*/native/**/bin/
+*.so
+*.dll
+*.exe
+*.lib
+*.exp
+*.pdb
+*.obj
+*.o
+*.apk
+*.apks
+*.xapk
+*.reseam
 
 .idea/
 *.iml

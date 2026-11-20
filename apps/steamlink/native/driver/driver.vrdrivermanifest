@@ -1,0 +1,9 @@
+{
+    "alwaysActivate": true,
+    "name": "seamless_pico_mt",
+    "directory": "",
+    "resourceOnly": false,
+    "hmd_presence": [
+        "*.*"
+    ]
+}
