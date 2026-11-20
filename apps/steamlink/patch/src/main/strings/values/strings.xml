@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="pico_motion_tracker">PICO Motion Tracker</string>
-    <string name="pico_motion_tracker_description">Injects an OpenXR implicit API layer that streams PICO full-body tracking (XR_BD_body_tracking) and physical object tracker poses (XR_BD_motion_tracking) to the companion SteamVR OpenVR driver over UDP</string>
+    <string name="pico_motion_tracker_description">Injects an OpenXR implicit API layer that streams PICO full-body tracking (XR_BD_body_tracking, XR_BD_motion_tracking) to the companion SteamVR OpenVR driver</string>
 
     <string name="opt_host_title">PC driver IP address</string>
     <string name="opt_host_description">IPv4 address of the PC running SteamVR and the Seamless PICO Motion Tracker driver. Leave blank to auto-discover on the local network</string>
@@ -10,20 +10,20 @@
     <string name="opt_port_description">UDP port the SteamVR OpenVR driver listens on (default 39575)</string>
 
     <string name="opt_tracker_preset_title">Body tracker preset</string>
-    <string name="opt_tracker_preset_description">Selects active SteamVR tracker roles in full-body mode: 3pt (Waist, Feet), 6pt (+ Chest, Knees), 8pt (+ Elbows), 10pt (+ Shoulders), or all (+ Hips, Wrists)</string>
+    <string name="opt_tracker_preset_description">Selects active SteamVR tracker roles in full-body mode: 3pt (waist, feet), 6pt (+ chest, knees), 8pt (+ elbows), 10pt (+ shoulders), or all (+ hips, wrists)</string>
 
     <string name="opt_tracking_mode_title">Tracking mode</string>
-    <string name="opt_tracking_mode_description">auto follows the headset PICO Motion Tracker setting (Body or Object tracking); body forces full-body joints; object forces raw physical tracker poses</string>
+    <string name="opt_tracking_mode_description">auto follows the headset motion tracker setting, body forces full-body joints, and object forces raw physical tracker poses</string>
 
     <string name="allow_remote_vr">Allow Remote VR</string>
-    <string name="allow_remote_vr_description">Removes local-network and same-subnet checks in Steam Link VR so VR mode can connect over WireGuard VPN or routed non-local networks</string>
+    <string name="allow_remote_vr_description">Removes local-network and same-subnet checks in steamlink vr so vr mode can connect over WireGuard VPN or routed non-local networks</string>
 
     <string name="opt_remote_vr_host_title">Host PC IP address</string>
-    <string name="opt_remote_vr_host_description">Optional IPv4 or IPv6 address of your SteamVR PC reachable over VPN or LAN. Leave blank to use Steam Link cached or advertised host addresses automatically</string>
+    <string name="opt_remote_vr_host_description">Leave blank to use steamlink cached or advertised host addresses automatically</string>
 
     <string name="change_package_name">Change package name</string>
-    <string name="change_package_name_description">Changes the Steam Link package name so it can be installed alongside the original app, updating VRLink scene launches and shared preferences</string>
+    <string name="change_package_name_description">Please blame PicoOS for matrix</string>
 
     <string name="opt_package_name_title">Package name</string>
-    <string name="opt_package_name_description">New Android application package name (default app.aeong.steamlink)</string>
+    <string name="opt_package_name_description">Empty value defaults app.aeong.steamlink</string>
 </resources>
