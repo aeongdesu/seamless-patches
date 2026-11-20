@@ -7,4 +7,11 @@
 ## Patches
 
 <!-- patches:start -->
+
+### `com.valvesoftware.steamlinkvr`
+
+| Patch | What it does |
+|---|---|
+| PICO Motion Tracker | Injects an OpenXR implicit API layer that streams PICO full-body tracking (XR_BD_body_tracking) and physical object tracker poses (XR_BD_motion_tracking) to the companion SteamVR OpenVR driver over UDP |
+
 <!-- patches:end -->
