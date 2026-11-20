@@ -307,6 +307,7 @@ private fun computeRestartSkipBindToDevicePatches(elf: Elf64Arm64Image): List<El
 val allowRemoteVr = patch(SteamLinkPatchStrings.allowRemoteVr) {
     description(SteamLinkPatchStrings.allowRemoteVrDescription)
     compatibleWith(STEAMLINK_VR_PACKAGE)
+    enabledByDefault(false)
 
     val hostOption = stringOption(
         key = "host",

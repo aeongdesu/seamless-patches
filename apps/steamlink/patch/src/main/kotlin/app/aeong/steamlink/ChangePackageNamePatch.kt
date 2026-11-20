@@ -40,7 +40,6 @@ private val vrLinkActivity = klass(VRLINK_ACTIVITY_CLASS)
 val changePackageName = patch(SteamLinkPatchStrings.changePackageName) {
     description(SteamLinkPatchStrings.changePackageNameDescription)
     compatibleWith(STEAM_LINK_PACKAGE)
-    enabledByDefault(false)
 
     val packageNameOption = stringOption(
         key = "packageName",
