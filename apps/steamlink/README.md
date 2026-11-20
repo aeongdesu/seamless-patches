@@ -3,10 +3,7 @@
 ### how to install driver
 https://nightly.link/aeongdesu/seamless-patches/workflows/steamlink-openvr-driver/main/seamless-pico-mt-driver-win64.zip
 
-do with admin
-```
-powershell -ExecutionPolicy Bypass -File .\install-windows.ps1
-```
+run `install-windows.ps1` with admin
 
 ### Troubleshooting
 
