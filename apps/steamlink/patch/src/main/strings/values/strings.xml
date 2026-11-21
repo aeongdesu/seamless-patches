@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pico_motion_tracker">PICO Motion Tracker</string>
-    <string name="pico_motion_tracker_description">Injects an OpenXR implicit API layer that streams PICO full-body tracking (XR_BD_body_tracking, XR_BD_motion_tracking) to the companion SteamVR OpenVR driver</string>
+    <string name="pico_motion_tracker">PICO Motion Tracker Integration</string>
+    <string name="pico_motion_tracker_description">!Please install custom seamless OpenVR driver first (check docs)! Injects an OpenXR implicit API layer that streams PICO FBT layer to custom OpenVR driver</string>
 
     <string name="opt_host_title">PC driver IP address</string>
     <string name="opt_host_description">IPv4 address of the PC running SteamVR and the Seamless PICO Motion Tracker driver. Leave blank to auto-discover on the local network</string>
